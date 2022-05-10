@@ -16,9 +16,7 @@ class PlaylistsSongService {
     const result = await this._pool.query({
       //  REVIEW
       //  field yang diminta untuk diekspor, tidak sesuai dengan spesifikasi
-      text: `SELECT playlists.id, playlists.name, users.username FROM playlists 
-                    LEFT JOIN users ON users.id = playlists.owner 
-                    WHERE playlists.id = $1`,
+      text: 'SELECT id, name FROM playlists WHERE id = $1',
       values: [id],
     });
     return result.rows[0];
