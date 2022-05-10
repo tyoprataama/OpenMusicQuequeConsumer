@@ -14,6 +14,8 @@ class PlaylistsSongService {
 
     async getPlaylistById(id) {
         const result = await this._pool.query({
+            //  REVIEW
+            //  field yang diminta untuk diekspor, tidak sesuai dengan spesifikasi
             text: `SELECT playlists.id, playlists.name, users.username FROM playlists 
                     LEFT JOIN users ON users.id = playlists.owner 
                     WHERE playlists.id = $1`,
