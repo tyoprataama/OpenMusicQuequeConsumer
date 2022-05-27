@@ -3,9 +3,6 @@ const nodemailer = require('nodemailer');
 class MailSender {
     constructor() {
         this._transporter = nodemailer.createTransport({
-            //  REVIEW (Sudah diedit)
-            //  Tidak sesuai dengan spesifikasi:
-            //  Serta, nilai host dan port dari server SMTP juga wajib menggunakan environment variable MAIL_HOST dan MAIL_PORT.
             host: process.env.MAIL_HOST,
             port: process.env.MAIL_PORT,
             secure: true,
